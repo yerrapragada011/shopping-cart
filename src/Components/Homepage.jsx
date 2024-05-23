@@ -6,9 +6,9 @@ function Homepage() {
 
   useEffect(() => {
     const initializeProducts = async () => {
-      const items = await Products()
+      const data = await Products()
 
-      setProductCards(items.map((title, index) => ({ id: index, title })))
+      setProductCards(data)
     }
 
     initializeProducts()
@@ -17,7 +17,9 @@ function Homepage() {
   return (
     <>
       {productCards.map((item, index) => (
-        <div key={index}>{item.title}</div>
+        <div key={index}>
+          {item.title} {item.price}
+        </div>
       ))}
     </>
   )
