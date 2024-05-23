@@ -3,13 +3,13 @@ import Products from './Products'
 import styles from './Homepage.module.css'
 
 function Homepage() {
-  const [productCards, setProductCards] = useState([])
+  const [products, setProducts] = useState([])
 
   useEffect(() => {
     const initializeProducts = async () => {
       const data = await Products()
 
-      setProductCards(data)
+      setProducts(data)
     }
 
     initializeProducts()
@@ -18,7 +18,7 @@ function Homepage() {
   return (
     <>
       <div className={styles.productGrid}>
-        {productCards.map((item, index) => (
+        {products.map((item, index) => (
           <div key={index} className={styles.product}>
             <img
               className={styles.productImage}
@@ -26,7 +26,7 @@ function Homepage() {
               alt={item.description}
             />
             <p>{item.title}</p>
-            <p>{item.price}</p>
+            <p>${item.price}</p>
           </div>
         ))}
       </div>
