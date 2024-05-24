@@ -21,3 +21,11 @@
   border: 2px solid gray;
   border-radius: 10px;
 }
+
+.productButton {
+  margin: 5px 0px;
+}
+
+.productQuantity {
+  margin-left: 2px;
+}
