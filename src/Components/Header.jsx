@@ -9,9 +9,12 @@ function Header({ size }) {
       <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>
         <h1>Shop</h1>
       </Link>
-      <Link to='/cart' className={styles.cartIcon} style={{ textDecoration: 'none', color: 'black' }}>
+      <Link
+        to='/cart'
+        className={styles.cartIcon}
+        style={{ textDecoration: 'none', color: 'black' }}
+      >
         <span>{size}</span>
-
         <h1>
           <ShoppingCartIcon fontSize='large' />
         </h1>
@@ -21,7 +24,7 @@ function Header({ size }) {
 }
 
 Header.propTypes = {
-  size: PropTypes.string
+  size: PropTypes.number
 }
 
 export default Header

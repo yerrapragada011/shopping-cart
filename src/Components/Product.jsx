@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types'
 import styles from './Product.module.css'
+import { useOutletContext } from 'react-router-dom'
 
-function Product({ item, handleAddToCart }) {
+function Product({ item }) {
+  const { handleAddToCart } = useOutletContext()
+
   return (
     <>
       <img
@@ -35,8 +38,8 @@ function Product({ item, handleAddToCart }) {
 }
 
 Product.propTypes = {
-  item: PropTypes.string.isRequired,
-  handleAddToCart: PropTypes.func.isRequired
+  item: PropTypes.object.isRequired,
+  handleAddToCart: PropTypes.func
 }
 
 export default Product

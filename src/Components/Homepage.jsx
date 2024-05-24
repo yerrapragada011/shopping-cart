@@ -31,7 +31,7 @@ function Homepage({ handleAddToCart }) {
 }
 
 Homepage.propTypes = {
-  handleAddToCart: PropTypes.func.isRequired
+  handleAddToCart: PropTypes.func
 }
 
 export default Homepage
