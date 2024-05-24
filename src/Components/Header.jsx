@@ -1,10 +1,18 @@
 import styles from './Header.module.css'
+import { Link } from 'react-router-dom'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 
 function Header() {
   return (
     <div className={styles.header}>
-      <h1>Shopping store</h1>
-      <h1>Cart</h1>
+      <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>
+        <h1>Shop</h1>
+      </Link>
+      <Link style={{ textDecoration: 'none', color: 'black' }}>
+        <h1>
+          <ShoppingCartIcon fontSize='large' />
+        </h1>
+      </Link>
     </div>
   )
 }
