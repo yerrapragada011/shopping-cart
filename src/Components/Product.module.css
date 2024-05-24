@@ -1,0 +1,13 @@
+.productImage {
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 5px;
+}
+
+.productButton {
+  margin: 5px 0px;
+}
+
+.productQuantity {
+  margin-left: 2px;
+}
