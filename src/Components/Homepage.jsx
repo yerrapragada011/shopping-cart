@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
 import Products from './Products'
 import styles from './Homepage.module.css'
 import Product from './Product'
 
-function Homepage({ handleAddToCart }) {
+function Homepage() {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -22,16 +21,12 @@ function Homepage({ handleAddToCart }) {
       <div className={styles.productGrid}>
         {products.map((item, index) => (
           <div key={index} className={styles.product} id={item.id}>
-            <Product item={item} handleAddToCart={handleAddToCart} />
+            <Product item={item} />
           </div>
         ))}
       </div>
     </>
   )
-}
-
-Homepage.propTypes = {
-  handleAddToCart: PropTypes.func
 }
 
 export default Homepage
