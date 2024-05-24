@@ -8,7 +8,7 @@ function Header() {
       <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>
         <h1>Shop</h1>
       </Link>
-      <Link style={{ textDecoration: 'none', color: 'black' }}>
+      <Link to='/cart' style={{ textDecoration: 'none', color: 'black' }}>
         <h1>
           <ShoppingCartIcon fontSize='large' />
         </h1>
