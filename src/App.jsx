@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Header size={cart.length} />
-      <Outlet context={{ handleAddToCart }} />
+      <Outlet context={{ handleAddToCart, cart }} />
     </>
   )
 }
