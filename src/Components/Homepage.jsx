@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import Products from './Products'
 import styles from './Homepage.module.css'
 
-function Homepage() {
+function Homepage({ handleAddToCart }) {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -40,12 +41,21 @@ function Homepage() {
                 defaultValue={1}
               />
             </label>
-            <button className={styles.productButton}>Add to cart</button>
+            <button
+              className={styles.productButton}
+              onClick={() => handleAddToCart(item)}
+            >
+              Add to cart
+            </button>
           </div>
         ))}
       </div>
     </>
   )
+}
+
+Homepage.propTypes = {
+  handleAddToCart: PropTypes.func.isRequired
 }
 
 export default Homepage

@@ -1,10 +1,13 @@
 import Header from './Header'
+import styles from './Cart.module.css'
 
 function Cart() {
   return (
     <>
       <Header />
-      <h1>Hello World</h1>
+      <div className={styles.cart}>
+        <h1>Shopping cart</h1>
+      </div>
     </>
   )
 }
