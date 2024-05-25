@@ -7,8 +7,18 @@ const cartLocalStorage = JSON.parse(localStorage.getItem('cart') || [])
 function App() {
   const [cart, setCart] = useState(cartLocalStorage)
 
-  const handleAddToCart = (item) => {
-    setCart([...cart, item])
+  const handleAddToCart = (item, quantity) => {
+    const existingItem = cart.find((cartItem) => cartItem.id === item.id)
+    if (existingItem) {
+      const updatedCart = cart.map((cartItem) =>
+        cartItem.id === item.id
+          ? { ...cartItem, quantity: cartItem.quantity + quantity }
+          : cartItem
+      )
+      setCart(updatedCart)
+    } else {
+      setCart([...cart, { ...item, quantity }])
+    }
   }
 
   const handleDeleteFromCart = (id) => {

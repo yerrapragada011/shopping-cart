@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './Product.module.css'
 import { useOutletContext } from 'react-router-dom'
 
 function Product({ item }) {
   const { handleAddToCart } = useOutletContext()
+  const [quantity, setQuantity] = useState(1)
 
   return (
     <>
@@ -25,11 +27,13 @@ function Product({ item }) {
           step='1'
           className={styles.productQuantity}
           defaultValue={1}
+          value={quantity}
+          onChange={(e) => setQuantity(Number(e.target.value))}
         />
       </label>
       <button
         className={styles.addProductButton}
-        onClick={() => handleAddToCart(item)}
+        onClick={() => handleAddToCart(item, quantity)}
       >
         Add to cart
       </button>

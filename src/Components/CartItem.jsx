@@ -14,6 +14,7 @@ function CartItem({ item }) {
       />
       <p>{item.title}</p>
       <p>${item.price}</p>
+      <p>Quantity: {item.quantity}</p>
       <button onClick={() => handleDeleteFromCart(item.id)}>
         Delete from cart
       </button>
