@@ -28,7 +28,7 @@ function Product({ item }) {
         />
       </label>
       <button
-        className={styles.productButton}
+        className={styles.addProductButton}
         onClick={() => handleAddToCart(item)}
       >
         Add to cart
