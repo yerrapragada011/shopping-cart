@@ -26,7 +26,6 @@ function Product({ item }) {
           max='9'
           step='1'
           className={styles.productQuantity}
-          defaultValue={1}
           value={quantity}
           onChange={(e) => setQuantity(Number(e.target.value))}
         />
