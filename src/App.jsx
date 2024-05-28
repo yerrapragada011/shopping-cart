@@ -2,10 +2,18 @@ import { Outlet } from 'react-router-dom'
 import Header from './Components/Header.jsx'
 import { useState, useEffect } from 'react'
 
-const cartLocalStorage = JSON.parse(localStorage.getItem('cart') || [])
+const getCartFromLocalStorage = () => {
+  const cart = localStorage.getItem('cart')
+  try {
+    return cart ? JSON.parse(cart) : []
+  } catch (e) {
+    console.error('Error parsing cart from localStorage', e)
+    return []
+  }
+}
 
 function App() {
-  const [cart, setCart] = useState(cartLocalStorage)
+  const [cart, setCart] = useState(getCartFromLocalStorage())
 
   const handleAddToCart = (item, quantity) => {
     const existingItem = cart.find((cartItem) => cartItem.id === item.id)
